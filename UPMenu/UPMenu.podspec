@@ -5,6 +5,7 @@ Pod::Spec.new do |s|
   s.name = "UPMenu"
   s.summary = "UpperApp-like floating menu."
   s.requires_arc = true
+  s.swift_version = '4.0'
 
   s.version = "0.1.0"
 
