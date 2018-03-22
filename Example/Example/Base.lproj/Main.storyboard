@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tubik" translatesAutoresizingMaskIntoConstraints="NO" id="0Wp-Hz-Ycx">
+                                <rect key="frame" x="52.666666666666657" y="271" width="270" height="270"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="270" id="EB5-ZH-fRM"/>
+                                    <constraint firstAttribute="width" constant="270" id="Tt1-Im-hGc"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OhB-xP-koY" customClass="UPMenu" customModule="UPMenu">
+                                <rect key="frame" x="120" y="340" width="375" height="812"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.086274509803921567" green="0.68627450980392157" blue="0.792156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="0Wp-Hz-Ycx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0wc-gG-aJL"/>
+                            <constraint firstItem="OhB-xP-koY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="340" id="9H8-kD-Cc4"/>
+                            <constraint firstItem="OhB-xP-koY" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="Efq-nm-9tA"/>
+                            <constraint firstItem="0Wp-Hz-Ycx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JgR-HV-7AD"/>
+                            <constraint firstItem="OhB-xP-koY" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="dFP-5Q-UdT"/>
+                            <constraint firstItem="OhB-xP-koY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="120" id="fpg-mK-9ye"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="upMenuFromStoryboard" destination="OhB-xP-koY" id="OqD-oT-fON"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="33.75" y="29.577464788732396"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tubik" width="500" height="500"/>
+    </resources>
+</document>
