@@ -1,0 +1,6 @@
+framework module UPMenu {
+  umbrella header "UPMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}

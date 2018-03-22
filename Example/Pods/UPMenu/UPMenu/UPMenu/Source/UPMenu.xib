@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UPMenu" customModule="UPMenu" customModuleProvider="target">
+            <connections>
+                <outlet property="closeButton" destination="RcZ-I0-h6e" id="mbR-d2-pGP"/>
+                <outlet property="hamburgerMenuButton" destination="3rE-E4-R93" id="6qy-YH-u0i"/>
+                <outlet property="hamburgerMenuButtonHeightConstraint" destination="Z5h-Cd-GrC" id="SEF-Xi-oxd"/>
+                <outlet property="hamburgerMenuButtonWidthConstraint" destination="26y-uR-ghR" id="QhP-20-ZdG"/>
+                <outlet property="mainContentView" destination="TyS-w7-7WX" id="cNu-pz-q2O"/>
+                <outlet property="menuItemsContainerHeightConstraint" destination="gGr-yb-mnX" id="MRB-Q0-mJ7"/>
+                <outlet property="menuItemsContainerView" destination="unq-ZL-dRA" id="zS3-lZ-Jmb"/>
+                <outlet property="tableView" destination="xfk-P6-xZp" id="6OP-H5-eIL"/>
+                <outlet property="tableViewTopConstraint" destination="9oG-sA-iEP" id="Pll-sx-0Vf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TyS-w7-7WX" userLabel="Main Content View">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="351"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="unq-ZL-dRA" userLabel="Table Container View">
+                    <rect key="frame" x="0.0" y="351" width="320" height="217"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xfk-P6-xZp">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="217"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="cMK-zo-V7g"/>
+                                <outlet property="delegate" destination="-1" id="JQj-tS-CsS"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="xfk-P6-xZp" firstAttribute="top" secondItem="unq-ZL-dRA" secondAttribute="top" id="9oG-sA-iEP"/>
+                        <constraint firstItem="xfk-P6-xZp" firstAttribute="leading" secondItem="unq-ZL-dRA" secondAttribute="leading" id="EgM-jQ-wol"/>
+                        <constraint firstAttribute="height" constant="217" id="gGr-yb-mnX"/>
+                        <constraint firstAttribute="bottom" secondItem="xfk-P6-xZp" secondAttribute="bottom" id="nEB-dL-SpP"/>
+                        <constraint firstAttribute="trailing" secondItem="xfk-P6-xZp" secondAttribute="trailing" id="qft-gn-zl2"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RcZ-I0-h6e">
+                    <rect key="frame" x="247" y="291" width="57" height="57"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="57" id="3yA-Eg-ENV"/>
+                        <constraint firstAttribute="height" constant="57" id="h7g-R4-S8d"/>
+                    </constraints>
+                    <state key="normal" image="closeIcn"/>
+                    <connections>
+                        <action selector="touchUpInsideCloseButton:" destination="-1" eventType="touchUpInside" id="3vR-gq-C0q"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rE-E4-R93">
+                    <rect key="frame" x="148.5" y="274" width="24" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="26y-uR-ghR"/>
+                        <constraint firstAttribute="height" constant="20" id="Z5h-Cd-GrC"/>
+                    </constraints>
+                    <state key="normal" image="menuIcn"/>
+                    <connections>
+                        <action selector="touchUpInsideHamburgerMenuButton:" destination="-1" eventType="touchUpInside" id="CNZ-y4-PbC"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="RcZ-I0-h6e" secondAttribute="trailing" constant="16" id="4oB-Ye-SDr"/>
+                <constraint firstItem="unq-ZL-dRA" firstAttribute="top" secondItem="TyS-w7-7WX" secondAttribute="bottom" id="HJJ-Z3-75S"/>
+                <constraint firstAttribute="trailing" secondItem="TyS-w7-7WX" secondAttribute="trailing" id="Hxu-w6-gIf"/>
+                <constraint firstItem="unq-ZL-dRA" firstAttribute="top" secondItem="RcZ-I0-h6e" secondAttribute="bottom" constant="3" id="Id8-dm-5GK"/>
+                <constraint firstAttribute="bottom" secondItem="unq-ZL-dRA" secondAttribute="bottom" id="Pzb-co-IXq"/>
+                <constraint firstItem="3rE-E4-R93" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="SVf-us-EM3"/>
+                <constraint firstItem="unq-ZL-dRA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bPl-20-Y9S"/>
+                <constraint firstItem="TyS-w7-7WX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="nLs-5E-Xv1"/>
+                <constraint firstItem="TyS-w7-7WX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="r1s-Kl-yhh"/>
+                <constraint firstAttribute="trailing" secondItem="unq-ZL-dRA" secondAttribute="trailing" id="r79-lR-WIP"/>
+                <constraint firstItem="3rE-E4-R93" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sin-gX-xDN"/>
+            </constraints>
+            <point key="canvasLocation" x="24" y="52"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="closeIcn" width="17" height="17"/>
+        <image name="menuIcn" width="19" height="15"/>
+    </resources>
+</document>

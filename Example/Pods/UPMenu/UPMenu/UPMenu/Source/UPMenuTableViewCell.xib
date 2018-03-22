@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Arial.ttf">
+            <string>ArialMT</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="UPMenuTableViewCell" id="S50-dD-VmT" customClass="UPMenuTableViewCell" customModule="UPMenu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="68"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S50-dD-VmT" id="rG5-OI-ume">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1D1-t6-9xL">
+                        <rect key="frame" x="20" y="8" width="347" height="51.5"/>
+                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="36"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="1D1-t6-9xL" firstAttribute="top" secondItem="rG5-OI-ume" secondAttribute="top" constant="8" id="T58-VA-lGt"/>
+                    <constraint firstAttribute="bottom" secondItem="1D1-t6-9xL" secondAttribute="bottom" constant="8" id="o1d-qq-jgf"/>
+                    <constraint firstAttribute="trailing" secondItem="1D1-t6-9xL" secondAttribute="trailing" constant="8" id="ulF-dM-ggw"/>
+                    <constraint firstItem="1D1-t6-9xL" firstAttribute="leading" secondItem="rG5-OI-ume" secondAttribute="leading" constant="20" id="uwe-zp-1XV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="menuItemTitleLabel" destination="1D1-t6-9xL" id="Ku6-4w-MUL"/>
+            </connections>
+            <point key="canvasLocation" x="-56.5" y="6"/>
+        </tableViewCell>
+    </objects>
+</document>
