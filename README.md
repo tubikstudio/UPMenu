@@ -121,7 +121,7 @@ We’d be really happy if you sent us links to your projects where you use our c
 
 MIT License
 
-Copyright (c) 2018 tubikstudio
+Copyright (c) 2018 Tubik Studio
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
