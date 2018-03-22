@@ -2,7 +2,7 @@
 
 Menu control from [Upper](https://uppertodo.com)
 
-![Preview](https://github.com/tubikstudio/UPMenu/demo.gif)
+![Preview](https://github.com/tubikstudio/UPMenu/blob/master/demo.gif)
 
 ## Requirements
 
