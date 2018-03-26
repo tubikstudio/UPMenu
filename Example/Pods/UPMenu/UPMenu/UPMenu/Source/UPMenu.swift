@@ -35,11 +35,14 @@ public extension UPMenuDelegate {
 @IBDesignable public class UPMenu: UIView {
 
     public struct Appearance {
+        public var menuImage: UIImage?
+        public var closeMenuImage: UIImage?
         public var closedMenuColor = UIColor.white
         public var titleViewBackgorundColor = UIColor.white
         public var menuItemsViewBackgroundColor = UIColor.black
         public var menuItemCellBackgroundColor = UIColor.black
         public var menuItemCellTitleFont = UIFont.systemFont(ofSize: 24)
+        public var menuItemCellTitleColor = UIColor.white
     }
 
     private struct Constants {
@@ -64,7 +67,7 @@ public extension UPMenuDelegate {
 
     public weak var delegate: UPMenuDelegate?
 
-    public private(set) var menuItemsTitles = ["Item 1", "Item 2", "Item 3"]
+    public private(set) var menuItems = [UPMenuItem]()
 
     public var menuItemsListHeight: CGFloat = 217 {
         didSet {
@@ -72,6 +75,8 @@ public extension UPMenuDelegate {
             layoutIfNeeded()
         }
     }
+
+    public var menuItemHeight: CGFloat = 44
 
     public var appearance = Appearance() {
         didSet {
@@ -169,10 +174,13 @@ public extension UPMenuDelegate {
                                                          attribute: .bottom,
                                                          multiplier: 1,
                                                          constant: 0))
+        mainContentView.subviews.forEach {
+            $0.isHidden = menuState == .closed
+        }
     }
 
-    public func updateMenuItemsTitles(with newItemsTitles: [String]) {
-        menuItemsTitles = newItemsTitles
+    public func updateMenuItems(with newItems: [UPMenuItem]) {
+        menuItems = newItems
         tableView.reloadData()
     }
 
@@ -204,6 +212,9 @@ public extension UPMenuDelegate {
                                        completion: { finished in
                                         guard finished else { return }
                                         self.updateAppearance(for: .expanded)
+                                        self.mainContentView.subviews.forEach {
+                                            $0.isHidden = false
+                                        }
                                         UIView.animate(withDuration: 0.3,
                                                        delay: 0,
                                                        options: [.curveEaseIn, .curveEaseOut],
@@ -246,6 +257,9 @@ public extension UPMenuDelegate {
                         self.maskLayer.bounds = CGRect(origin: .zero, size: Constants.closedMenuSize)
                         self.tableViewTopConstraint.constant = superView.bounds.height
                         self.layoutIfNeeded()
+                        self.mainContentView.subviews.forEach {
+                            $0.isHidden = true
+                        }
         },
                        completion: { finished in
                         self.updateAppearance(for: .closed)
@@ -299,6 +313,7 @@ public extension UPMenuDelegate {
         closeButton.isExclusiveTouch = true
         tableView.register(UINib(nibName: "UPMenuTableViewCell", bundle: Bundle(for: UPMenu.self)),
                            forCellReuseIdentifier: UPMenuTableViewCell.reuseIdentifier)
+        updateAppearance(for: menuState)
     }
 
     private func loadViewFromNib() -> UIView {
@@ -325,6 +340,8 @@ public extension UPMenuDelegate {
         mainContentView.backgroundColor = menuState == .closed ? appearance.closedMenuColor : appearance.titleViewBackgorundColor
         menuItemsContainerView.backgroundColor = menuState == .closed ? appearance.closedMenuColor : appearance.menuItemsViewBackgroundColor
         tableView.isHidden = menuState == .closed
+        closeButton.setImage(appearance.closeMenuImage ?? MenuState.closed.image, for: .normal)
+        hamburgerMenuButton.setImage(appearance.menuImage ?? MenuState.expanded.image, for: .normal)
         tableView.reloadData()
     }
 }
@@ -332,6 +349,10 @@ public extension UPMenuDelegate {
 // MARK: - UITableViewDelegate
 
 extension UPMenu: UITableViewDelegate {
+
+    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return menuItemHeight
+    }
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.upMenu(self, didSelectMenuItemAt: indexPath)
@@ -344,13 +365,17 @@ extension UPMenu: UITableViewDelegate {
 extension UPMenu: UITableViewDataSource {
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuItemsTitles.count
+        return menuItems.count
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: UPMenuTableViewCell.reuseIdentifier, for: indexPath) as! UPMenuTableViewCell
-        cell.configure(with: menuItemsTitles[indexPath.row],
+        let cell = tableView.dequeueReusableCell(withIdentifier: UPMenuTableViewCell.reuseIdentifier,
+                                                 for: indexPath) as! UPMenuTableViewCell
+
+        cell.configure(menuItemImage: menuItems[indexPath.row].image,
+                       menuItemTitle: menuItems[indexPath.row].title,
                        menuAppearance: appearance)
+
         return cell
     }
 

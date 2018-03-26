@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -23,8 +23,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zls-Rh-HYh">
+                        <rect key="frame" x="46" y="19" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="LPf-vL-lkD"/>
+                            <constraint firstAttribute="height" constant="30" id="PaZ-wu-zKS"/>
+                        </constraints>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1D1-t6-9xL">
-                        <rect key="frame" x="20" y="8" width="347" height="51.5"/>
+                        <rect key="frame" x="114" y="13.5" width="253" height="40.5"/>
                         <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="36"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -32,14 +39,16 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="1D1-t6-9xL" firstAttribute="top" secondItem="rG5-OI-ume" secondAttribute="top" constant="8" id="T58-VA-lGt"/>
-                    <constraint firstAttribute="bottom" secondItem="1D1-t6-9xL" secondAttribute="bottom" constant="8" id="o1d-qq-jgf"/>
-                    <constraint firstAttribute="trailing" secondItem="1D1-t6-9xL" secondAttribute="trailing" constant="8" id="ulF-dM-ggw"/>
-                    <constraint firstItem="1D1-t6-9xL" firstAttribute="leading" secondItem="rG5-OI-ume" secondAttribute="leading" constant="20" id="uwe-zp-1XV"/>
+                    <constraint firstItem="1D1-t6-9xL" firstAttribute="leading" secondItem="zls-Rh-HYh" secondAttribute="trailing" constant="38" id="48N-It-iB8"/>
+                    <constraint firstItem="zls-Rh-HYh" firstAttribute="leading" secondItem="rG5-OI-ume" secondAttribute="leading" constant="46" id="OTK-q5-YZX"/>
+                    <constraint firstItem="1D1-t6-9xL" firstAttribute="centerY" secondItem="rG5-OI-ume" secondAttribute="centerY" id="c7M-ST-XSW"/>
+                    <constraint firstItem="zls-Rh-HYh" firstAttribute="centerY" secondItem="rG5-OI-ume" secondAttribute="centerY" id="uFW-Hy-jxz"/>
+                    <constraint firstAttribute="trailing" secondItem="1D1-t6-9xL" secondAttribute="trailing" constant="8" id="z0D-oZ-38H"/>
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="menuItemImageView" destination="zls-Rh-HYh" id="d8N-ae-By2"/>
                 <outlet property="menuItemTitleLabel" destination="1D1-t6-9xL" id="Ku6-4w-MUL"/>
             </connections>
             <point key="canvasLocation" x="-56.5" y="6"/>
