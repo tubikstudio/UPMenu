@@ -57,7 +57,7 @@ upMenu.delegate = self
 extension ViewController: UPMenuDelegate {
 
     func upMenu(_ upMenu: UPMenu, didSelectMenuItemAt indexPath: IndexPath) {
-        print("\(upMenu.menuItemsTitles[indexPath.row])")
+        print("\(upMenu.menuItems[indexPath.row].title)")
     }
 
 }
@@ -68,8 +68,9 @@ extension ViewController: UPMenuDelegate {
 * Set menu items titles:
 
 ```swift
-upMenu.updateMenuItemsTitles(with: ["👤 Profile", "🎯 Activity", "⚙️ Settings"])
+upMenu.updateMenuItems(with: menuItems)
 ```
+menuItems should be array of [UPMenuItem] objects
 
 * Set menu items list height:
 
@@ -77,11 +78,17 @@ upMenu.updateMenuItemsTitles(with: ["👤 Profile", "🎯 Activity", "⚙️ Set
 upMenu.menuItemsListHeight = 217
 ```
 
-* Set menu items cells backgorund color and font:
+* Set menu items cells backgorund color, font, text color:
 
 ```swift
 upMenu.appearance.menuItemCellBackgroundColor = UIColor.black
 upMenu.appearance.menuItemCellTitleFont = UIFont.systemFont(ofSize: 36)
+upMenu.appearance.menuItemCellTitleColor = UIColor.black
+```
+* Set menu items cells height:
+
+```swift
+ upMenu.menuItemHeight = 80
 ```
 
 * Set closed menu color:
