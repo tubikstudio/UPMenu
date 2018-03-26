@@ -70,7 +70,7 @@ extension ViewController: UPMenuDelegate {
 ```swift
 upMenu.updateMenuItems(with: menuItems)
 ```
-menuItems should be array of [UPMenuItem] objects
+`menuItems` should be array of `UPMenuItem` objects
 
 * Set menu items list height:
 
