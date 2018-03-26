@@ -5,6 +5,6 @@ use_frameworks!
 
 target 'Example' do
 
-    pod 'UPMenu', :path => '~/Documents/Projects/UPMenu_Github/UPMenu'
+    pod 'UPMenu'
 
 end
