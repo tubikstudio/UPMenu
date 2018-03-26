@@ -12,6 +12,7 @@
 		C8383453204417E60024A181 /* UPMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8383451204417E60024A181 /* UPMenuTableViewCell.swift */; };
 		C8383454204417E60024A181 /* UPMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C8383452204417E60024A181 /* UPMenuTableViewCell.xib */; };
 		C838345620441AA50024A181 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C838345520441AA50024A181 /* Assets.xcassets */; };
+		C899FFF32068EF0400C8CF01 /* UPMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C899FFF22068EF0400C8CF01 /* UPMenuItem.swift */; };
 		C8A754DC203DC0BF00C7C234 /* UPMenu.h in Headers */ = {isa = PBXBuildFile; fileRef = C8A754DA203DC0BF00C7C234 /* UPMenu.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -21,6 +22,7 @@
 		C8383451204417E60024A181 /* UPMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPMenuTableViewCell.swift; sourceTree = "<group>"; };
 		C8383452204417E60024A181 /* UPMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UPMenuTableViewCell.xib; sourceTree = "<group>"; };
 		C838345520441AA50024A181 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C899FFF22068EF0400C8CF01 /* UPMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPMenuItem.swift; sourceTree = "<group>"; };
 		C8A754D7203DC0BF00C7C234 /* UPMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UPMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8A754DA203DC0BF00C7C234 /* UPMenu.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UPMenu.h; sourceTree = "<group>"; };
 		C8A754DB203DC0BF00C7C234 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -44,6 +46,7 @@
 				C8383452204417E60024A181 /* UPMenuTableViewCell.xib */,
 				C838344D204417650024A181 /* UPMenu.swift */,
 				C838344E204417650024A181 /* UPMenu.xib */,
+				C899FFF22068EF0400C8CF01 /* UPMenuItem.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C899FFF32068EF0400C8CF01 /* UPMenuItem.swift in Sources */,
 				C8383453204417E60024A181 /* UPMenuTableViewCell.swift in Sources */,
 				C838344F204417650024A181 /* UPMenu.swift in Sources */,
 			);

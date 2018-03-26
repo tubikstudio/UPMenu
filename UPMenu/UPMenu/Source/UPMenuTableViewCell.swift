@@ -18,14 +18,17 @@ public class UPMenuTableViewCell: UITableViewCell {
         }
     }
 
+    @IBOutlet private weak var menuItemImageView: UIImageView!
     @IBOutlet private weak var menuItemTitleLabel: UILabel!
 
     //MARK: - Methods
 
-    func configure(with menuItemTitle: String, menuAppearance: UPMenu.Appearance) {
+    func configure(menuItemImage: UIImage?, menuItemTitle: String?, menuAppearance: UPMenu.Appearance) {
         backgroundColor = menuAppearance.menuItemCellBackgroundColor
+        menuItemTitleLabel.textColor = menuAppearance.menuItemCellTitleColor
         menuItemTitleLabel.font = menuAppearance.menuItemCellTitleFont
         menuItemTitleLabel.text = menuItemTitle
+        menuItemImageView.image = menuItemImage
     }
 
 }

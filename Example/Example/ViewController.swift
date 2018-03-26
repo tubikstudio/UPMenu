@@ -9,33 +9,39 @@
 import UIKit
 import UPMenu
 
+struct RecipeAppMenuItem: UPMenuItem {
+    var image: UIImage?
+    var title: String?
+}
+
 class ViewController: UIViewController {
 
-    @IBOutlet weak var upMenuFromStoryboard: UPMenu!
+    @IBOutlet private weak var shadowImage: UIImageView!
+    @IBOutlet private weak var upMenuFromStoryboard: UPMenu!
+
+    private let menuItems = [RecipeAppMenuItem(image: UIImage(named: "recipe_icon"), title: "Recipes"),
+                             RecipeAppMenuItem(image: UIImage(named: "favorite_icon"), title: "Favorite"),
+                             RecipeAppMenuItem(image: UIImage(named: "shoplist_icon"), title: "Shoplist"),
+                             RecipeAppMenuItem(image: UIImage(named: "profile_icon"), title: "Profile")]
 
     // MARK: - UIViewController
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-        let label = UILabel(frame: CGRect(origin: .zero, size: CGSize(width: 150, height: 150)))
-        label.font = UIFont.systemFont(ofSize: 56)
-        label.textAlignment = .center
-        label.text = "🐶"
+        upMenuFromStoryboard.delegate = self
+        upMenuFromStoryboard.appearance.menuImage = UIImage(named: "hamburger_icon")
+        upMenuFromStoryboard.appearance.closedMenuColor = UIColor(red: 212/255.0, green: 57/255.0, blue: 71/255.0, alpha: 1)
+        upMenuFromStoryboard.appearance.closeMenuImage = UIImage(named: "close_icon")
+        upMenuFromStoryboard.appearance.menuItemsViewBackgroundColor = UIColor.white
+        upMenuFromStoryboard.appearance.menuItemCellTitleFont = UIFont(name: "Futura-Medium", size: 23) ?? UIFont.systemFont(ofSize: 23)
+        upMenuFromStoryboard.appearance.menuItemCellBackgroundColor = UIColor.white
+        upMenuFromStoryboard.appearance.menuItemCellTitleColor = UIColor.black
+        upMenuFromStoryboard.menuItemsListHeight = 344
+        upMenuFromStoryboard.menuItemHeight = 80
+        upMenuFromStoryboard.updateMenuItems(with: menuItems)
+        upMenuFromStoryboard.addTitleView(Bundle.main.loadNibNamed("MenuTitleView", owner: self, options: nil)?.first as! UIView)
 
-//        upMenuFromStoryboard.startPoint = CGPoint(x: view.frame.width - 60, y: view.frame.height - 80)
-        upMenuFromStoryboard.updateMenuItemsTitles(with: ["👤 Profile", "🎯 Activity", "⚙️ Settings"])
-        upMenuFromStoryboard.addTitleView(label)
-
-//        let upMenu = UPMenu(frame: view.frame)
-//        upMenu.startPoint = CGPoint(x: view.frame.width - 60, y: view.frame.height - 80)
-//        upMenu.delegate = self
-//        upMenu.updateMenuItemsTitles(with: ["👤 Profile", "🎯 Activity", "⚙️ Settings"])
-//
-//
-//        upMenu.addTitleView(label)
-//
-//        view.addSubview(upMenu)
     }
 
 }
@@ -44,8 +50,20 @@ class ViewController: UIViewController {
 
 extension ViewController: UPMenuDelegate {
 
+    func upMenuWillAppear() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.shadowImage.alpha = 0
+        })
+    }
+
+    func upMenuDidClosed() {
+        UIView.animate(withDuration: 0.3, animations: {
+            self.shadowImage.alpha = 1
+        })
+    }
+
     func upMenu(_ upMenu: UPMenu, didSelectMenuItemAt indexPath: IndexPath) {
-        print("\(upMenu.menuItemsTitles[indexPath.row])")
+        print("\(upMenu.menuItems[indexPath.row].title ?? "")")
     }
 
 }

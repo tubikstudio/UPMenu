@@ -2,11 +2,15 @@ PODS:
   - UPMenu (0.1.0)
 
 DEPENDENCIES:
-  - UPMenu
+  - UPMenu (from `~/Documents/Projects/UPMenu_Github/UPMenu`)
+
+EXTERNAL SOURCES:
+  UPMenu:
+    :path: ~/Documents/Projects/UPMenu_Github/UPMenu
 
 SPEC CHECKSUMS:
-  UPMenu: 802748a4a7c996f63a91f7c8ff3fff327f8e813e
+  UPMenu: f8230b778686623f6be15e25a4d0dfdbe3e316ca
 
-PODFILE CHECKSUM: 07ece959b4782fa1e67d0aa88713fb67b44bde05
+PODFILE CHECKSUM: 9fdfdcaa9847ff5c00c15016eea3e9142a239610
 
 COCOAPODS: 1.4.0
