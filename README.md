@@ -1,6 +1,6 @@
 # UPMenu
 
-Menu control from [Upper](https://uppertodo.com) and Android - like floating menu for iOS, written in Swift 🐦
+Menu control from [Upper](https://uppertodo.com)
 
 ![Preview](https://github.com/tubikstudio/UPMenu/blob/master/demo.gif)
 
